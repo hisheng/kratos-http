@@ -1,0 +1,26 @@
+syntax = "proto3";
+package api;
+import "google/api/annotations.proto";
+
+option go_package = "github/hisheng/kratos-http/api";
+
+service User {
+  rpc CreateUser (CreateUserRequest) returns (CreateUserReply){
+    option (google.api.http) = {
+      post: "/user",
+      body: "*",
+    };
+  };
+  rpc ListUser (ListUserRequest) returns (ListUserReply){
+    option (google.api.http) = {
+      get: "/users",
+    };
+  };
+}
+message CreateUserRequest {}
+message CreateUserReply {}
+message ListUserRequest {}
+message ListUserReply {}
+
+
+
