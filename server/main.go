@@ -2,10 +2,10 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/transport/http"
 	"github.com/hisheng/kratos-http/api"
 	"github.com/hisheng/kratos-http/service"
+	"log"
 	"net"
 )
 
