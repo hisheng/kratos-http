@@ -18,9 +18,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	srv := http.NewServer(http.Listener(ln))
+	server := http.NewServer(http.Listener(ln))
 	userService := service.UserService{}
-	api.RegisterUserHTTPServer(srv, userService)
+	api.RegisterUserHTTPServer(server, userService)
 
-	_ = srv.Serve(ln)
+	_ = server.Serve(ln)
 }
