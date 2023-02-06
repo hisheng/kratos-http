@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"github.com/go-kratos/kratos/v2/transport/http"
 	"github.com/hisheng/kratos-http/api"
 	"github.com/hisheng/kratos-http/service"
@@ -17,5 +18,6 @@ func main() {
 	userService := service.UserService{}
 	api.RegisterUserHTTPServer(server, userService)
 
-	_ = server.Serve(ln)
+	_ = server.Start(context.Background())
+	// _ = server.Serve(ln) 这个也行，不过感觉上面的start更好，start会调用server.Serve
 }
