@@ -19,8 +19,12 @@ service User {
 }
 message CreateUserRequest {}
 message CreateUserReply {}
-message ListUserRequest {}
-message ListUserReply {}
+message ListUserRequest {
+  int64 id = 1;
+}
+message ListUserReply {
+  int64 id = 1;
+}
 
 
 
